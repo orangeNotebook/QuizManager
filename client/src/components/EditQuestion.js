@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Redirect, Link} from 'react-router-dom';
+import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import '../App.css';
 
 const EditQuestion = props => {

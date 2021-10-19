@@ -74,4 +74,40 @@ app.get('/', async (req, res) => {
     }
   })
 
+  app.put('/updateQuiz', async (req, res) => {
+    const name = req.body.name
+    const questions = req.body.questions
+    const id = req.body.id
+    
+    const quiz = new QuizModel({
+      name: name, 
+      questions: questions
+    })
+  
+    try {
+      await QuizModel.findById(id, (err, updatedQuiz) => {
+        updatedQuiz.name = name;
+        updatedQuiz.questions = questions;
+        updatedQuiz.save();
+        res.send("updated")
+      });
+    } catch(err) {
+      console.log(err)
+    }
+  })
+  
+  
+  
+  app.get('/readQuizzes', async (req, res) => {
+    QuizModel.find({}, (err, result)=>{
+      if (err){
+        res.send(err)
+      }
+  
+      res.send(result)
+  
+    })
+  })
+  
+
   app.listen(port, () => console.log(`Listening on port ${port}`)); 

@@ -5,6 +5,8 @@ import Login from './components/Login'
 import Dashboard from './components/Dashboard'
 import EditQuiz from './components/EditQuiz';
 import Confirmation from './components/Confirmation';
+import ViewQuizzes from './components/ViewQuizzes';
+import Quiz from './components/Quiz';
 
 localStorage.setItem("user", JSON.stringify({access: "invalid"}))
 localStorage.setItem("questionLetter", ("ABCDE"))
@@ -20,6 +22,8 @@ function App() {
             <Route path="/Dashboard" component={Dashboard} extract/>
             <Route path="/EditQuiz" component={EditQuiz} extract/>
             <Route path="/Confirmation" component={Confirmation} extract/>
+            <Route path="/ViewQuizzes" component={ViewQuizzes} extract/>
+            <Route path="/Quiz" component={Quiz} extract/>
 
            <Route component={Error}/>
           </Switch>
