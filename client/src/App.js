@@ -8,9 +8,6 @@ import Confirmation from './components/Confirmation';
 import ViewQuizzes from './components/ViewQuizzes';
 import Quiz from './components/Quiz';
 
-localStorage.setItem("user", JSON.stringify({access: "invalid"}))
-localStorage.setItem("questionLetter", ("ABCDE"))
-
 function App() {
   return (
     <div className="App">

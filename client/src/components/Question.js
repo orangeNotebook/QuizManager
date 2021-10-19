@@ -1,20 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../App.css';
 
 const Question = props => {
-  
+
+  let [loggedInUser, setLoggedInUser] = useState({});
+
+  useEffect(()=>{
+      setLoggedInUser(JSON.parse(localStorage.getItem("user")))
+    }, [])
 
   const questionNumber = props.questionNumber
   const quizDetails = props.quizDetails
   const quizAnswers = quizDetails.questions[questionNumber].questions
   const quizAnswer = quizDetails.questions[questionNumber].answer
  
-
-
-
-
-const answers = [];
-const options = [];
+  const answers = [];
+  const options = [];
 
  
  for(let i = 0; i < quizAnswers.length; i++){
@@ -39,7 +40,11 @@ const options = [];
       <h2>{quizDetails.questions[questionNumber].name}</h2>
 
       <ul>{answers}</ul>
-      <p>Correct Answer: {quizAnswer}</p>
+      
+      {(loggedInUser.access === "restricted") ? <p></p>
+      :  <p>Correct Answer: {quizAnswer}</p>
+      }
+     
       
       </div>
     </div>
