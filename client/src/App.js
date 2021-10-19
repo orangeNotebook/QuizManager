@@ -1,10 +1,25 @@
 import './App.css';
+import { BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 import CreateAccount from './components/CreateAccount'
+import Login from './components/Login'
+import Dashboard from './components/Dashboard'
+
+localStorage.setItem("user", JSON.stringify({access: "invalid"}))
 
 function App() {
   return (
     <div className="App">
-      <CreateAccount/>
+      <BrowserRouter>
+       <div>
+           <Switch>
+            <Route path="/" component={Login} exact/>
+            <Route path="/CreateAccount" component={CreateAccount} exact/>
+            <Route path="/Dashboard" component={Dashboard} extract/>
+           <Route component={Error}/>
+          </Switch>
+       </div> 
+       {JSON.parse(localStorage.getItem("user")).access === "invalid" ? <Redirect to='/'/> : <p></p>}
+     </BrowserRouter>
     </div>
   );
 }
