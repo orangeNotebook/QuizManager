@@ -16,7 +16,7 @@ useEffect(()=>{
   return <div className="App">
       <Header/>
         
-      <Link to="/EditQuestion"><button>Create a Quiz</button></Link>
+      <Link to="/EditQuiz"><button>Create a Quiz</button></Link>
       <button>View all Quizzes</button>
 
 

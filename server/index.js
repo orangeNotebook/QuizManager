@@ -57,11 +57,9 @@ app.get('/', async (req, res) => {
 
   //Quiz and question requests
 
-  app.get('/createQuiz', async (req, res) => {
-    const name = "Test Quiz"
-    const questions = [{name: "Test question 1", questions: [
-        {id: "A", answer: "Test answer A"}, {id: "B", answer: "Test answer B"}, {id: "C", answer: "Test answer C"}
-    ], answer: "B"}]
+  app.post('/createQuiz', async (req, res) => {
+    const name = req.body.name
+    const questions = req.body.questions
     
     const quiz = new QuizModel({
       name: name, 

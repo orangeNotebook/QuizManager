@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Axios from 'axios'
 import { Redirect, Link} from 'react-router-dom';
 import '../App.css';
 
-function EditQuestion() {
+const EditQuestion = props => {
   
 
   const [questionName, setQuestionName] = useState('');
@@ -18,7 +17,7 @@ function EditQuestion() {
 
   const maxQuestions = 5;
   const minQuestions = 3;
-    const answers = [];
+ const answers = [];
  const options = [];
 
  const removeAnswer = () => {
@@ -46,6 +45,13 @@ const Dropdown = ({ label, value, options, onChange }) => {
   );
 };
 
+const saveQuiz = () => {
+  let newQuiz = props.quiz
+  newQuiz[props.questionNumber] = {name: questionName, questions: quizAnswer, answer: dropdownValue}
+  props.setQuiz(newQuiz)
+}
+
+
  
  for(let i = 0; i < questionAmount; i++){
   
@@ -69,7 +75,7 @@ const Dropdown = ({ label, value, options, onChange }) => {
 
     {redirect ?  <Redirect to='/Dashboard'/> : <p></p>}
 
-    <h1>Question</h1>
+    <h1>Question {props.questionNumber + 1}</h1>
     
     <label>Question:</label>
     <input class="questionName" type="text" onChange={(event) => {setQuestionName(event.target.value)}}/>
@@ -84,6 +90,7 @@ const Dropdown = ({ label, value, options, onChange }) => {
       options={options}
       value={dropdownValue}
       onChange={handleDropdownChange}/>
+      {saveQuiz()}
       </div>
     : <p></p>
     }
