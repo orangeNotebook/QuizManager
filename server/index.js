@@ -17,16 +17,30 @@ app.get('/', async (req, res) => {
     res.send("Hello World!")
   })
 
-app.get('/createUser', async (req, res) => {
+  app.post('/createUser', async (req, res) => {
+    const userName = req.body.userName
+    const password = req.body.password
+    const salt = req.body.salt
+  
+    const user = new UserModel({userName: userName, password: password, salt: salt, access: "restricted"})
+  
+    try {
+      await user.save();
+      res.send("user created")
+    }catch(err) {
+      console.log(err)
+    }
+  })
 
-const user = new UserModel({userName: "Test User", password: "Test Password", salt: "Test Salt", access: "Test Access"})
-
-try {
-    await user.save();
-    res.send("user created")
-}catch(err) {
-    console.log(err)
-}
-})
+  app.get('/readUserNames', async (req, res) => {
+    UserModel.find({}, {"userName": 1}, (err, result)=>{
+      if (err){
+        res.send(err)
+      }
+  
+      res.send(result)
+  
+    })
+  })
 
   app.listen(port, () => console.log(`Listening on port ${port}`)); 
