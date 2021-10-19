@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
+import Header from './Header';
 
 function Dashboard() {
 
@@ -13,9 +14,9 @@ useEffect(()=>{
  
 
   return <div className="App">
-      <p>Logged in</p>
+      <Header/>
         
-      <button>Create a Quiz</button>
+      <Link to="/EditQuestion"><button>Create a Quiz</button></Link>
       <button>View all Quizzes</button>
 
 
