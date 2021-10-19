@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 require('dotenv').config(); 
 
 const UserModel = require('./models/User')
+const QuizModel = require('./models/Quiz')
 
 app.use(express.json());
 app.use(cors())
@@ -52,6 +53,27 @@ app.get('/', async (req, res) => {
       res.send(result)
   
     })
+  })
+
+  //Quiz and question requests
+
+  app.get('/createQuiz', async (req, res) => {
+    const name = "Test Quiz"
+    const questions = [{name: "Test question 1", questions: [
+        {id: "A", answer: "Test answer A"}, {id: "B", answer: "Test answer B"}, {id: "C", answer: "Test answer C"}
+    ], answer: "B"}]
+    
+    const quiz = new QuizModel({
+      name: name, 
+      questions: questions
+    })
+  
+    try {
+      await quiz.save();
+      res.send("quiz created")
+    }catch(err) {
+      console.log(err)
+    }
   })
 
   app.listen(port, () => console.log(`Listening on port ${port}`)); 
