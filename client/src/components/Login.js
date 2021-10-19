@@ -20,12 +20,12 @@ function Login() {
 
  
   const login = () => {
-    allUsers.map((val, key) => {
-      
+    allUsers.map((val) => {
       if(val.userName === userName && val.password === (pbkdf2.pbkdf2Sync(password, val.salt, 1, 32, 'sha512')).toString('hex')){
         localStorage.setItem("user", JSON.stringify({userName: val.userName, access: val.access}))
         setRedirect(true)
       }
+      return null
     })
   }
   

@@ -21,12 +21,11 @@ function CreateUser() {
 
   const checkValidUserName = (userName) =>{
     let valid = true;
-    allUserNames.map((val, key) => {
-      
+    allUserNames.map((val) => {
       if(userName.toUpperCase() === val.userName.toUpperCase()){
-        console.log("found")
         valid = false;
       }
+      return null;
     })
     setValidUserName(valid)
     return valid

@@ -7,7 +7,6 @@ const EditQuestion = props => {
 
   const [questionName, setQuestionName] = useState('');
   const [quizAnswer, setQuizAnswer] = useState([]);
-  const [redirect, setRedirect] = useState(false);
   const [questionAmount, setQuestionAmount] = useState(3);
   const [dropdownValue, setDropdownValue] = useState('A')
 
@@ -37,8 +36,8 @@ const Dropdown = ({ label, value, options, onChange }) => {
     <label>
       {label}
       <select value={value} onChange={onChange}>
-        {options.map((option) => (
-          <option value={option.value}>{option.label}</option>
+        {options.map((option, i) => (
+          <option value={option.value} key={i}>{option.label}</option>
         ))}
       </select>
     </label>
@@ -58,7 +57,7 @@ const saveQuiz = () => {
         answers.push(
         <div>
             <label>{localStorage.getItem("questionLetter")[i]}</label>
-            <input type="text" onChange={(event) => {
+            <input type="text" key={i} onChange={(event) => {
               let newArray = quizAnswer
               newArray[i] = {id: localStorage.getItem("questionLetter")[i], answer: event.target.value}
               setQuizAnswer(newArray)
@@ -71,14 +70,14 @@ const saveQuiz = () => {
 
 
 
-  return <div className="App" class="question">
+  return <div className="App question" >
 
-    {redirect ?  <Redirect to='/Dashboard'/> : <p></p>}
+    {(JSON.parse(localStorage.getItem("user")).access === "invalid") ?  <Redirect to='/'/> : <p></p>}
 
     <h1>Question {props.questionNumber + 1}</h1>
     
     <label>Question:</label>
-    <input class="questionName" type="text" onChange={(event) => {setQuestionName(event.target.value)}}/>
+    <input className="questionName" type="text" onChange={(event) => {setQuestionName(event.target.value)}}/>
 
     <label>Question Answers:</label>
     <ul>{answers}</ul>

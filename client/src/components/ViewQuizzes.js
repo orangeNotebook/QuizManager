@@ -7,11 +7,10 @@ function ViewQuizzes() {
 
   
   const [allQuizzes, setAllQuizzes] = useState([])
-  const [redirect, setRedirect] = useState(false);
+  
 
   useEffect(()=>{
     Axios.get("http://localhost:5000/readQuizzes").then((response) => {
-      console.log(response.data)
       setAllQuizzes(response.data)
     })
   }, [])
@@ -36,7 +35,7 @@ function ViewQuizzes() {
 
   return <div className="App">
 
-    {redirect ?  <Redirect to='/Dashboard'/> : <p></p>}
+    {(JSON.parse(localStorage.getItem("user")).access === "invalid") ?  <Redirect to='/'/> : <p></p>}
 
     <ul>{quizzes}</ul>
 

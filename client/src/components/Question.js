@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import React from 'react';
 import '../App.css';
 
 const Question = props => {
@@ -9,16 +8,13 @@ const Question = props => {
   const quizDetails = props.quizDetails
   const quizAnswers = quizDetails.questions[questionNumber].questions
   const quizAnswer = quizDetails.questions[questionNumber].answer
-  console.log(quizAnswers)
+ 
 
 
 
 
 const answers = [];
 const options = [];
-
-const [redirect, setRedirect] = useState(false);
-
 
  
  for(let i = 0; i < quizAnswers.length; i++){
@@ -35,18 +31,17 @@ const [redirect, setRedirect] = useState(false);
 
 
 
-  return <div className="App" className="question">
+  return <div className="App">
+      <div className="question">
 
-    {redirect ?  <Redirect to='/Dashboard'/> : <p></p>}
+      <h1>Question {props.questionNumber + 1}</h1>
+      
+      <h2>{quizDetails.questions[questionNumber].name}</h2>
 
-    <h1>Question {props.questionNumber + 1}</h1>
-    
-    <h2>{quizDetails.questions[questionNumber].name}</h2>
-
-    <ul>{answers}</ul>
-    <p>Correct Answer: {quizAnswer}</p>
-    
-
+      <ul>{answers}</ul>
+      <p>Correct Answer: {quizAnswer}</p>
+      
+      </div>
     </div>
 
 }

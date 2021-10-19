@@ -9,7 +9,6 @@ function EditQuiz() {
 
   const [quizName, setQuizName] = useState('');
   const [quiz, setQuiz] = useState([])
-  const [redirect, setRedirect] = useState(false);
   const [questionAmount, setQuestionAmount] = useState(1);
 
   const maxQuestions = 5;
@@ -38,7 +37,7 @@ const saveQuiz = () => {
 
   return <div className="App">
 
-    {redirect ?  <Redirect to='/Dashboard'/> : <p></p>}
+    {(JSON.parse(localStorage.getItem("user")).access === "invalid") ?  <Redirect to='/'/> : <p></p>}
 
     <h1>Edit Quiz</h1>
     
@@ -47,7 +46,7 @@ const saveQuiz = () => {
 
     <ul>{questions}</ul>
 
-    <div class="quizOptions">
+    <div className="quizOptions">
       {questionAmount === minQuestions 
       ? <button disabled={true}>Remove a question</button>
       : <button onClick={removeQuestion}>Remove a question</button>}

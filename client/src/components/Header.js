@@ -18,9 +18,9 @@ useEffect(()=>{
    
   }
 
-  return <div className="App" class="header">
+  return <div className="App">
     
-    {(loggedInUser.access != "invalid") ? <p>Logged in as {loggedInUser.userName}</p>
+    {(loggedInUser.access !== "invalid") ? <p>Logged in as {loggedInUser.userName}</p>
    : <p>Not logged in</p>}
 
      <Link to="/"><button onClick={logout}>Logout</button></Link>
