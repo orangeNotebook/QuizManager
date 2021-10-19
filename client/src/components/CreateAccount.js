@@ -52,7 +52,7 @@ function CreateUser() {
     <input type="text" onChange={(event) => {setUserName(event.target.value)}}/>
 
     <label>Password:</label>
-    <input type="text" onChange={(event) => {setPassword(event.target.value)}}/>
+    <input type="password" onChange={(event) => {setPassword(event.target.value)}}/>
 
     {validUserName ? 
     <p></p>
