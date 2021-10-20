@@ -10,6 +10,7 @@ function Login() {
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const [redirect, setRedirect] = useState(false);
+  const [valid, setValid] = useState(true);
 
   const [allUsers, setAllUsers] = useState([])
 
@@ -28,6 +29,8 @@ function Login() {
       }
       return null
     })
+    setValid(false)
+    setPassword('')
   }
   
   return <div className="App">
@@ -36,15 +39,20 @@ function Login() {
 
     <h1>Login</h1>
     
-    <label>User Name:</label>
+    <label>Username:</label>
     <input type="text" onChange={(event) => {setUserName(event.target.value)}}/>
 
     <label>Password:</label>
-    <input type="password" onChange={(event) => {setPassword(event.target.value)}}/>
+    <input type="password" value={password} onChange={(event) => {setPassword(event.target.value)}}/>
 
     <button onClick={login}>Login</button>
 
     <p>Don't have an account? <Link to="/CreateAccount">Create one!</Link> </p>
+
+    {valid
+    ?<p></p>
+    :<p className="error-message">Invalid username or password, please try again.</p> 
+    }
 
     </div>
 

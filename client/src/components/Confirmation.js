@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
 
-function Confirmation() {
+const Confirmation = props => {
 
   
   return <div className="App">
-    <h1>Quiz Created</h1>
+    <h1>{props.location.message}</h1>
      <Link to="/Dashboard"><button>Return to Dashboard</button></Link>
 
     </div>

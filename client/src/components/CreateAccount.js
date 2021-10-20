@@ -48,17 +48,22 @@ function CreateUser() {
     <h1>Create an account</h1>
     
     
-    <label>User Name:</label>
+    <label>Usename:</label>
     <input type="text" onChange={(event) => {setUserName(event.target.value)}}/>
 
     <label>Password:</label>
     <input type="password" onChange={(event) => {setPassword(event.target.value)}}/>
 
+    
+    
+    {(userName && password)
+    ?<button onClick={createUser}>Create</button>
+    :<button disabled={true}>Create</button>
+    }
+
     {validUserName ? 
     <p></p>
-    : <p>Username already in use, please choose a different one</p>}
-
-    <button onClick={createUser}>Create</button>
+    : <p className="error-message">Username already in use, please choose a different one</p>}
 
     </div>
 }

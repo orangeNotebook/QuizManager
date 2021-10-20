@@ -5,7 +5,7 @@ import '../App.css';
 const EditQuestion = props => {
   
 
-  const [questionName, setQuestionName] = useState('');
+  const [questionName, setQuestionName] = useState(null);
   const [quizAnswer, setQuizAnswer] = useState([]);
   const [questionAmount, setQuestionAmount] = useState(3);
   const [dropdownValue, setDropdownValue] = useState('A')
@@ -20,7 +20,10 @@ const EditQuestion = props => {
  const options = [];
 
  const removeAnswer = () => {
-    setQuestionAmount(questionAmount - 1)
+   let tempAnswers = quizAnswer
+   tempAnswers.pop()
+  setQuizAnswer(tempAnswers)
+  setQuestionAmount(questionAmount - 1)
 }
 
 const addAnswer = () => {

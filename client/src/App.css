@@ -19,6 +19,15 @@ ul {
   padding-left: 0;
 }
 
+.delete-button {
+  transition-duration: 0.4s;
+  background-color: rgba(255, 0, 0, 0.616);
+}
+
+.error-message {
+  color: red;
+}
+
 .question {
   width: 550px;
   height: auto;

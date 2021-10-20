@@ -7,7 +7,7 @@ import '../App.css';
 function EditQuiz() {
 
 
-  const [quizName, setQuizName] = useState('');
+  const [quizName, setQuizName] = useState(null);
   const [quiz, setQuiz] = useState([])
   const [questionAmount, setQuestionAmount] = useState(1);
 
@@ -16,7 +16,10 @@ function EditQuiz() {
   let questions = [];
 
  const removeQuestion = () => {
-    setQuestionAmount(questionAmount - 1)
+   let tempQuiz = quiz
+  tempQuiz.pop()
+  setQuiz(tempQuiz)
+  setQuestionAmount(questionAmount - 1)
 }
 
 const addQuestion = () => {
@@ -55,7 +58,13 @@ const saveQuiz = () => {
       ? <button disabled={true}>Add a question</button>
       : <button onClick={addQuestion}>Add a question</button>}
 
-        <Link to={"/Confirmation"}><button onClick={saveQuiz}>Save Quiz</button></Link>
+      <Link to={
+          {
+            pathname: "/Confirmation",
+            message: "Quiz Created"
+          }
+          }><button onClick={saveQuiz}>Save Quiz</button></Link>
+        
     </div>
     </div>
 

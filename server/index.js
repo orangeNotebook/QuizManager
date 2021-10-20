@@ -108,6 +108,13 @@ app.get('/', async (req, res) => {
   
     })
   })
+
+  app.delete("/deleteQuiz/:id", async (req, res) => {
+    const id = req.params.id;
+  
+    await QuizModel.findByIdAndRemove(id).exec();
+    res.send("Deleted")
+  })
   
 
   app.listen(port, () => console.log(`Listening on port ${port}`)); 
