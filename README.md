@@ -17,7 +17,18 @@ in a seperate terminal, navigate to the `/server` directory and
 To set up the mongoDB, first create a new mognoDB database. Within this database create two new collections, one titled 'users' and one titled 'quizzes'.
 
 **REQUIRED**
-Import the `users.json` file into the 'users' collection.
+Import the `users.json` file into the 'users' collection. This will create three users with three different permission levels:
+
+```
+username: edit
+password: edit
+
+username: view
+password: view
+
+username: restricted
+password: restricted
+```
 
 **OPTIONAL**
 Import the `quizzes.json` file into the 'quizzes' collection.
