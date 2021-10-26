@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "616e911db3d3c08666c91afb"
+  },
+  "userName": "edit",
+  "password": "2a00b0c13b35845a4fb26a4c61f07028a3b426062f095336f0ea97c7ec165c5a",
+  "salt": "71b0d4ad-c494-490b-bf08-5d6f3e1f4bff",
+  "access": "edit",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "616ed1ea5e885073b940d23e"
+  },
+  "userName": "restricted",
+  "password": "9e03af95bfe3efa7f92136cbdce2afc7beecb2d8fc2991c39de5352fe480dc99",
+  "salt": "c1b0ea64-526f-471f-8797-233d752cac73",
+  "access": "restricted",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "616eff170ee62011029b395a"
+  },
+  "userName": "view",
+  "password": "82a2b6dc3cc4ae52b1cdc75717ee40a3769b963fe2d7953c361a497e3843c945",
+  "salt": "171b6e91-c340-4b50-a843-d9403bb30f9f",
+  "access": "view",
+  "__v": 0
+}]

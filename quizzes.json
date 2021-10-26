@@ -1,0 +1,321 @@
+[{
+  "_id": {
+    "$oid": "616d9773737ccb1617623a6d"
+  },
+  "name": "Superhero Quiz",
+  "questions": [
+    {
+      "name": "Which Superhero wears a mechanical suit?",
+      "questions": [
+        {
+          "id": "A",
+          "answer": "Superman"
+        },
+        {
+          "id": "B",
+          "answer": "Iron Man"
+        },
+        {
+          "id": "C",
+          "answer": "Thor"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "name": "Which Superhero does not fit the pattern?",
+      "questions": [
+        {
+          "id": "A",
+          "answer": "Batman"
+        },
+        {
+          "id": "B",
+          "answer": "Superman"
+        },
+        {
+          "id": "C",
+          "answer": "Spiderman"
+        },
+        {
+          "id": "D",
+          "answer": "Green Lantern"
+        },
+        {
+          "id": "E",
+          "answer": "The Flash"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "name": "Which Superhero has no powers?",
+      "questions": [
+        {
+          "id": "A",
+          "answer": "Spiderman"
+        },
+        {
+          "id": "B",
+          "answer": "Thor"
+        },
+        {
+          "id": "C",
+          "answer": "Batman"
+        },
+        {
+          "id": "D",
+          "answer": "The Flash"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "name": "Which Superhero is not in the Avengers?",
+      "questions": [
+        {
+          "id": "A",
+          "answer": "Captain America"
+        },
+        {
+          "id": "B",
+          "answer": "Thor"
+        },
+        {
+          "id": "C",
+          "answer": "Iron Man"
+        },
+        {
+          "id": "D",
+          "answer": "Hulk"
+        },
+        {
+          "id": "E",
+          "answer": "Superman"
+        }
+      ],
+      "answer": "E"
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "616da2937e555a05f61585fb"
+  },
+  "name": "Video Game Quiz",
+  "questions": [
+    {
+      "name": "Which video game consists of building?",
+      "questions": [
+        {
+          "id": "A",
+          "answer": "Call of Duty"
+        },
+        {
+          "id": "B",
+          "answer": "Minecraft"
+        },
+        {
+          "id": "C",
+          "answer": "Counter Strike"
+        },
+        {
+          "id": "D",
+          "answer": "Metro 2033"
+        },
+        {
+          "id": "E",
+          "answer": "Mario Kart"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "name": "Which video game is single-player only?",
+      "questions": [
+        {
+          "id": "A",
+          "answer": "World of Warcraft"
+        },
+        {
+          "id": "B",
+          "answer": "Rainbow 6 Siege"
+        },
+        {
+          "id": "C",
+          "answer": "The Elder Scrolls Online"
+        },
+        {
+          "id": "D",
+          "answer": "Legend of Zelda: BOTW"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "name": "Which video game is a PlayStation exclusive?",
+      "questions": [
+        {
+          "id": "A",
+          "answer": "Uncharted"
+        },
+        {
+          "id": "B",
+          "answer": "Death Stranding"
+        },
+        {
+          "id": "C",
+          "answer": "Neverwinter"
+        },
+        {
+          "id": "D",
+          "answer": "The Elder Scrolls Skyrim"
+        },
+        {
+          "id": "E",
+          "answer": "Super Meat Boy"
+        }
+      ],
+      "answer": "A"
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "616dadcd7e555a05f615860f"
+  },
+  "name": "Geography Quiz",
+  "questions": [
+    {
+      "name": "What is the capital of France?",
+      "questions": [
+        {
+          "id": "A",
+          "answer": "London"
+        },
+        {
+          "id": "B",
+          "answer": "Paris"
+        },
+        {
+          "id": "C",
+          "answer": "Barcelona"
+        },
+        {
+          "id": "D",
+          "answer": "Warsaw"
+        },
+        {
+          "id": "E",
+          "answer": "Europe"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "name": "What is the tallest mountain in the world?",
+      "questions": [
+        {
+          "id": "A",
+          "answer": "Mount Fuji"
+        },
+        {
+          "id": "B",
+          "answer": "Mount Damavand"
+        },
+        {
+          "id": "C",
+          "answer": "Mount Tyree"
+        },
+        {
+          "id": "D",
+          "answer": "Puncak Jaya"
+        },
+        {
+          "id": "E",
+          "answer": "Mount Everest"
+        }
+      ],
+      "answer": "E"
+    },
+    {
+      "name": "How many continents are there?",
+      "questions": [
+        {
+          "id": "A",
+          "answer": "3"
+        },
+        {
+          "id": "B",
+          "answer": "4"
+        },
+        {
+          "id": "C",
+          "answer": "6"
+        },
+        {
+          "id": "D",
+          "answer": "7"
+        },
+        {
+          "id": "E",
+          "answer": "9"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "name": "Which country does not belong in Europe?",
+      "questions": [
+        {
+          "id": "A",
+          "answer": "Brazil"
+        },
+        {
+          "id": "B",
+          "answer": "Germany"
+        },
+        {
+          "id": "C",
+          "answer": "Bulgaria"
+        },
+        {
+          "id": "D",
+          "answer": "Portugal"
+        },
+        {
+          "id": "E",
+          "answer": "Slovenia"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "name": "What is the largest country in the world?",
+      "questions": [
+        {
+          "id": "A",
+          "answer": "USA"
+        },
+        {
+          "id": "B",
+          "answer": "Canada"
+        },
+        {
+          "id": "C",
+          "answer": "Russia"
+        },
+        {
+          "id": "D",
+          "answer": "Brazil"
+        },
+        {
+          "id": "E",
+          "answer": "China"
+        }
+      ],
+      "answer": "C"
+    }
+  ],
+  "__v": 0
+}]
